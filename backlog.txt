@@ -2,9 +2,9 @@ SLANDO
 
 Project created, configured;
 
-1) Create MainController witch receiving requests to / or /main or /index
+1) Create MainController witch receiving requests to /  ++
 
-2) Create entity of 'slando_user' table
+2) Create entity of 'slando_user' table  ++
    User table structure:
    id VARCHAR(255) pk    (UUID.randomUUID().toString();)
    login VARCHAR(255)
@@ -14,7 +14,7 @@ Project created, configured;
    city VARCHAR(255)
    create_date TIMESTAMP    (@Column(name="create_date"))
 
-3) Create entity of 'slando_item' table
+3) Create entity of 'slando_item' table  ++
    Item table structure:
    id VARCHAR(255) pk
    cat VARCHAR(255)
@@ -29,14 +29,67 @@ Project created, configured;
    create_date TIMESTAMP   (java.util.Date)
    is_vip TINYINT
 
-4) Create RegisterController
+4) Create RegisterController     /register
 
-5) Create LoginController
+5) Create LoginController        /login
 
-6) Configure Hibernate (hibernate.cfg.xml, HibernateUtil)
+6) Configure Hibernate (hibernate.cfg.xml, HibernateUtil)  ++
 
 7) Create UserDao with getByLogin(String login), add(User u), update(User u) methods
 
 8) Create ItemDao with get(), getById(String id), add(Item i)
 
 9) Create main.jsp
+
+10)Configure SpringMVC in web.xml (DispatcherServlet adding)  ++
+
+11)Create dispatcher-servlet.xml (from pervious project)  ++
+
+12)Write code in get-mapped method of MainController to show main.jsp
+
+13)Create register.jsp
+
+14)Create login.jsp
+
+15)Write code in RegisterController's get-mapped method to show register.jsp
+
+16)Write code in LoginController's get-mapped method to show login.jsp
+
+17)Create UserService, ItemService as spring services
+
+18)Create AuthenticationService as spring service
+
+19)Update main.jsp to receive 'user' object and show correct buttons - sign in or profile/exit/add new item (with help of jstl's if and forEach)
+
+20)Update MainController to place 'user' object from session to the model
+
+21)Write code in RegisterController's post-mapped method witch registers a new user
+
+22)Update MainController to do exit
+
+23)Write code in LoginController's post-mapped method to log in a user ('user' object in session's attribute)
+
+24)Create logic in main.jsp and MainController to search items by category (dropdown list and search button)
+
+25)Create logic in main.jsp and MainController to search items by keyword (input text field and search button)
+
+26)Create add.jsp
+
+27)Create AddController to add new item (for logined users only)
+
+28)Create edit.jsp to edit item's parameters, remove item
+
+29)Create EditController (for item's owner only)
+
+30)Create profile.jsp
+
+31)Create ProfileController to change user's settings (for logined users only)
+
+32)Create counter witch shows how many logined users on the site, how many users on site (two counter variables)
+  32.1)Create SessionListener witch will decrement counter(s) when session destroyed
+
+33)Create TINYINT 'vip' field in Item and slando_item table
+
+34)Create logic in edit.jsp and EditController to do additional operations (up to top, set vip)
+
+35)Create logic in main.jsp and MainController to show 3 vip items in one line in top of all items
